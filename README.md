@@ -63,3 +63,20 @@ $ git tag <tag_name>
 How to push a tag:
 ---------------------
 $ git push origin <tag_name>
+
+----------------------------------------
+How to save incomplete/un committed changes into stash:
+---------------------------------------------------------
+$ git stash save
+
+How to check stored changes in the stash:
+---------------------------------------------------------
+$ git stash list
+stash@{0}: WIP on branch-2: 1d35dc2 addition method
+
+
+How to get back my work from stash:
+---------------------------------------------------------
+$ git stash pop
+
+

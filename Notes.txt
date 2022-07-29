@@ -1,0 +1,133 @@
+1. Java8
+2. Eclipse IDE
+3. Maven as build tool
+
+-> Create a maven project using maven-archtype-web
+-> Create or update HTML pages under the /src/main/web-app
+-> Right click on a project -> Maven Build -> type 'clean package' in goals and apply and RUN
+-> It will generate a WAR file.
+
+-> Download and extract Apache Tomcat zip:
+
+ https://tomcat.apache.org/download-90.cgi
+
+-> Copy your WAR file inside "/apache-tomcat-9.0.6/webapps"
+
+-> How To run Tomcat server(Web Container)
+
+=> Inside '\apache-tomcat-9.0.64\bin' double click on "startup.bat"
+to stop double click on "shutdown.bat"
+
+In the browser type below url:
+---------------------------------
+http://localhost:8080/DemoWebApp/
+
+-------------------------------------------------
+To develop an application what tools I need:
+-----------------------------------------------
+1. Linux
+2. JDK 1.8.256
+3. MySQL 8.1
+4. Node JS 13.40
+
+How to Install:
+-----------------
+
+
+How To check version:
+------------------------
+> docker --version
+
+
+Try to Run container:
+--------------------------
+docker run -d -p 80:80 docker/getting-started
+
+Open Browser and paste it : http://localhost/tutorial/
+
+How to pull/download a docker image from docker hub:
+-----------------------------------------------------
+> docker pull <image_name> : <version>
+
+>docker pull hello-world
+Using default tag: latest
+latest: Pulling from library/hello-world
+2db29710123e: Pull complete
+Digest: sha256:53f1bbee2f52c39e41682ee1d388285290c5c8a76cc92b42687eecf38e0af3f0
+Status: Downloaded newer image for hello-world:latest
+docker.io/library/hello-world:latest
+
+How to check available/installed docker images in our machine:
+----------------------------------------------------------------
+> docker images
+
+How to run docker image:
+----------------------------------------------------------------
+> docker run <image_name>
+
+
+-----------------------------------
+
+1. Create a folder with any name in my case docker_work
+2. Create a python file named Hello.py
+3. Create a file named "dockerfile"
+
+4. Paste this code into dockerfile:
+-----------------------------------------
+#Deriving the latest base image
+FROM python:latest
+
+
+#Labels as key value pair
+LABEL Maintainer="Shadab2022"
+
+
+# Any working directory can be chosen as per choice like '/' or '/home' etc
+# i have chosen /docker_work
+WORKDIR /docker_work
+
+#to COPY the remote file at working directory in container
+COPY . .
+# Now the structure looks like this '/docker_work/Hello.py'
+
+
+#CMD instruction should be used to run the software
+#contained by your image, along with any arguments.
+
+CMD [ "python", "Hello.py"]
+
+-----------------------------------------------------
+5. To build a docker image:
+----------------------------
+Syntax:
+-----------
+docker image build -t <name_of_image:version> <path of working folder>
+
+Example:
+----------
+docker image build -t python:0.0.1 C:\\Users\\saira\\OneDrive\\Desktop\\GL_Batches\\Devops_25_July\\docker_work
+
+6. How to Run:
+-----------------
+
+docker run <name_of_image:version>
+
+Example:
+----------
+docker run python:0.0.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
